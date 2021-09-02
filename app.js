@@ -12,6 +12,22 @@ let rightPressed = false;
 let leftPressed = false;
 document.addEventListener("keyup",handleKeyUp)
 document.addEventListener("keydown",handleKeyDown);
+var left = document.querySelector(".left");
+var right = document.querySelector(".right");
+left.addEventListener("mousedown",() => {
+    leftPressed = true;
+});
+left.addEventListener("mouseup",() => {
+    leftPressed = false;
+})
+right.addEventListener("mousedown",() => {
+    rightPressed = true;
+});
+right.addEventListener("mouseup",() => {
+    console.log("rioght up");
+    rightPressed = false;
+})
+
 function handleKeyUp(e){
     if(e.key == "Enter"){
         startGame();
